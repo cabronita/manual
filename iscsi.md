@@ -22,17 +22,17 @@ Create `LUN`
 
 `targetcli /backstores/block create dev=$LUN name=lun0`
 
-Create target on `SERVER`
+Create target
 
-`targetcli /iscsi create iqn.2003-01.org.linux-iscsi.$SERVER:lun0`
+`targetcli /iscsi create iqn.2003-01.org.linux-iscsi.$(hostname -s):lun0`
 
 Set ACL for `INITIATOR_NAME`
 
-`targetcli /iscsi/iqn.2003-01.org.linux-iscsi.$SERVER:lun0/tpg1/acls create wwn=$INITIATOR_NAME`
+`targetcli /iscsi/iqn.2003-01.org.linux-iscsi.$(hostname -s):lun0/tpg1/acls create wwn=$INITIATOR_NAME`
 
 Create LUN
 
-`/iscsi/iqn.2003-01.org.linux-iscsi.$SERVER:lun0/tpg1/luns create /backstores/block/lun0`
+`targetcli /iscsi/iqn.2003-01.org.linux-iscsi.$(hostname -s):lun0/tpg1/luns create /backstores/block/lun0`
 
 Save config
 
