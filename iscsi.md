@@ -30,7 +30,7 @@ Set ACL for `INITIATOR_NAME`
 
 `targetcli /iscsi/iqn.2003-01.org.linux-iscsi.$(hostname -s):lun0/tpg1/acls create wwn=$INITIATOR_NAME`
 
-Create LUN
+Create reference to `LUN`
 
 `targetcli /iscsi/iqn.2003-01.org.linux-iscsi.$(hostname -s):lun0/tpg1/luns create /backstores/block/lun0`
 
