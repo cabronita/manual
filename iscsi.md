@@ -18,9 +18,9 @@ Enable service
 
 `systemctl enable --now target`
 
-Create LUN
+Create `LUN`
 
-`targetcli /backstores/block create dev=/dev/vg/lv name=lun0`
+`targetcli /backstores/block create dev=$LUN name=lun0`
 
 Create target on `SERVER`
 
